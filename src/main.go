@@ -17,6 +17,7 @@ func main() {
 
 	r.GET("/books", controllers.FindByBooks)
 	r.POST("/books", controllers.CeateBook)
+	r.GET("/books/:id", controllers.FindBook) // new
 
 	r.Run()
 }
