@@ -15,7 +15,8 @@ func main() {
 	})
 	config.ConnectDatabase()
 
-	r.GET("/books", controllers.FindByBooks) // new
+	r.GET("/books", controllers.FindByBooks)
+	r.POST("/books", controllers.CeateBook)
 
 	r.Run()
 }
