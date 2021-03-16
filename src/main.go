@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"go-rest/src/config"
+	"go-rest/src/controllers"
+)
 
 func main() {
 	r := gin.Default()
@@ -9,6 +13,9 @@ func main() {
 			"message": "pong",
 		})
 	})
+	config.ConnectDatabase()
+
+	r.GET("/books", controllers.FindByBooks) // new
 
 	r.Run()
 }
